@@ -2,4 +2,8 @@
 
 
 def parse_quantity(value: str) -> int:
-    return int(value.strip())
+    """Parse a non-negative pick-list quantity."""
+    quantity = int(value.strip())
+    if quantity < 0:
+        raise ValueError("quantity must be non-negative")
+    return quantity
